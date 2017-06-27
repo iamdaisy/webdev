@@ -12,7 +12,7 @@
 <select name="want">
 	<option>야구</option>
 	<option>축구</option>
-	<option>농구</option>
+	<option selected="selected">농구</option>
 </select>
 <input type="submit" value="확인" />
 </form>
