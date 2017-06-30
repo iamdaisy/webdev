@@ -2,13 +2,9 @@
     pageEncoding="UTF-8"%>
 
 <%
-	session.setAttribute("msg1", "안녕하세용");
-	session.setAttribute("msg2", "실수란 신을 용서하는 인간의 행위이다");
-	session.setMaxInactiveInterval(10);
-	response.sendRedirect("session_status.jsp");
-
+	String msg = (String)request.getAttribute("msg");
+	String url = (String)request.getAttribute("url");
 %>
-
 
 <!DOCTYPE html>
 <html>
@@ -18,6 +14,12 @@
 <link rel="shortcut icon" href = "../favicon.ico" />
 </head>
 <body>
+<script type="text/javascript">
+
+alert('<%=msg%>');
+location.href='<%=url%>';
+
+</script>
 
 </body>
 </html>

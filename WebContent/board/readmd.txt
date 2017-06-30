@@ -1,0 +1,8 @@
+insert.jsp
+insert_action.jsp
+list.jsp
+content.jsp
+update.jsp
+update_action.jsp
+delete.jsp
+delete_action.jsp
