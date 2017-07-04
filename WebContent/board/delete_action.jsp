@@ -4,20 +4,16 @@
     pageEncoding="UTF-8"%>
     
 <%
-	String name = request.getParameter("name");
-	String content = request.getParameter("content");
+	long no = Long.parseLong(request.getParameter("no"));
 	String pwd = request.getParameter("pwd");
-	String title = request.getParameter("title");
 	
 	BoardVO boardVO = new BoardVO();
-	boardVO.setName(name);
-	boardVO.setContent(content);
+	boardVO.setNo(no);
 	boardVO.setPwd(pwd);
-	boardVO.setTitle(title);
 	
 	BoardDAO boardDAO = BoardDAO.getInstance();
-	boolean result = boardDAO.insertBoard(boardVO);
-	
+	boolean result = boardDAO.deleteBoard(boardVO);
+
 	
 %>
 <!DOCTYPE html>
@@ -31,10 +27,10 @@
 <script type="text/javascript">
 <% if(result) { %>
 
-	alert('글 등록 성공');
+	alert('글 삭제 성공');
 	location.href='list.jsp';
 <% } else { %>
-	alert('글 등록 실패');
+	alert('비밀번호가 틀립니다.');
 	location.href='javascript:history.back())';
 <% } %>
 

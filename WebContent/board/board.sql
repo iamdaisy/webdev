@@ -39,6 +39,19 @@ select no, name, title, regdate, viewcount
 from tb_board
 order by no desc;
 
+select no, name, title, content, viewcount, regdate
+from TB_BOARD
+where no=1;
+
+select B.*
+from   (select rownum AS rnum, A.*
+	from   (select no, title, name, regdate, viewcount
+	from tb_board
+ 	order by no desc) A) B
+where rnum between 11 and 20;
+
+
+select count(*) from TB_BOARD;
 
 
 
