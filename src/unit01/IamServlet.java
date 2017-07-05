@@ -20,15 +20,11 @@ public class IamServlet extends HttpServlet {
 			String url) throws ServletException, IOException {
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
-	
-		
 	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doProcess(request, response, "/WEB-INF/views/form.jsp");
 	}
-
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String iam = "그래, 난" + request.getParameter("name");
 		request.setAttribute("iam", iam);
